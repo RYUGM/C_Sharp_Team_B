@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bd613ffb-d49b-4ffc-ba39-a93ebf4dedfa": {
+      "ProjectGuid": "bd613ffb-d49b-4ffc-ba39-a93ebf4dedfa",
+      "DisplayName": "RYU_Project",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "기타 파일",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
