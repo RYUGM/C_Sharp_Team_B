@@ -270,5 +270,36 @@ namespace Parking_Manage
                 throw;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox_parking_spot.Text == "")
+                {
+                    MessageBox.Show("주차 공간 입력 하세요");
+                    //정산할 공간을 입력 안할시 출력
+                    return;
+                }
+
+
+                else
+                {
+                    //update와 주차 공간 값을 가지고 executeQuery1로 이동
+                    DataManager.executeQuery1("update", textBox_parking_spot.Text);
+
+                    DataManager.selectQuery();
+                    refreshScreen();
+                    //dataGridView_Parking_Car_View.DataSource = null;
+                    //dataGridView_Parking_Car_View.DataSource = DataManager.cars;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+                throw;
+            }
+        }
     }
 }

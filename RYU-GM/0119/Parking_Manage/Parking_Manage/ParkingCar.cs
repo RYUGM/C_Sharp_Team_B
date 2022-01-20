@@ -15,6 +15,7 @@ namespace Parking_Manage
         public string PhoneNumber { get; set; }
         public DateTime ParkingTime { get; set; }
 
+        public string result { get; set; }
         public string result1 { get; set; }
 
 

@@ -50,13 +50,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.result1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.result = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parkingSpotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.driverNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parkingTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parkingCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Parking_Car_View)).BeginInit();
@@ -203,7 +204,7 @@
             this.driverNameDataGridViewTextBoxColumn,
             this.phoneNumberDataGridViewTextBoxColumn,
             this.parkingTimeDataGridViewTextBoxColumn,
-            this.result1});
+            this.result});
             this.dataGridView_Parking_Car_View.DataSource = this.parkingCarBindingSource;
             this.dataGridView_Parking_Car_View.Location = new System.Drawing.Point(0, 21);
             this.dataGridView_Parking_Car_View.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -292,12 +293,12 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // result1
+            // result
             // 
-            this.result1.DataPropertyName = "result1";
-            this.result1.HeaderText = "요금";
-            this.result1.Name = "result1";
-            this.result1.ReadOnly = true;
+            this.result.DataPropertyName = "result";
+            this.result.HeaderText = "요금1";
+            this.result.Name = "result";
+            this.result.ReadOnly = true;
             // 
             // parkingSpotDataGridViewTextBoxColumn
             // 
@@ -343,11 +344,22 @@
             // 
             this.parkingCarBindingSource.DataSource = typeof(Parking_Manage.ParkingCar);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(692, 199);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(942, 630);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
@@ -399,7 +411,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn driverNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn parkingTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn result1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn result;
+        private System.Windows.Forms.Button button3;
     }
 }
 

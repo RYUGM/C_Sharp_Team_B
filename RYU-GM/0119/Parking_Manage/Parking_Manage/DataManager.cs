@@ -61,7 +61,7 @@ namespace Parking_Manage
                 car.PhoneNumber = item["phonenumber"].ToString();
                 car.ParkingTime = item["parkingtime"].ToString() ==
                     "" ? new DateTime() : DateTime.Parse(item["parkingtime"].ToString());
-                car.result1 = (item["result1"].ToString())+"원";
+              
 
                 cars.Add(car);
             }
@@ -94,7 +94,7 @@ namespace Parking_Manage
                 car.PhoneNumber = item["Phonenumber"].ToString();
                 car.ParkingTime = item["Parkingtime"].ToString() ==
                     "" ? new DateTime() : DateTime.Parse(item["parkingtime"].ToString());
-            car.result1 = item["result1"].ToString();
+          
 
                 //cars.Add(car);
             //}
@@ -110,7 +110,7 @@ namespace Parking_Manage
                 case "update":
                     query = $"update {TABLE} set " +
                         $"carnumber='{carnumber}',drivername='{drivername}'," +
-                        $"phonenumber='{phonenumber}',parkingtime=sysdate,result = to_char(systimestamp,'HH24') " +
+                        $"phonenumber='{phonenumber}',parkingtime=sysdate ,result=sysdate " +
                         $" where parkingspot={parkingspot}";
                     break;
                 case "insert":
@@ -128,8 +128,16 @@ namespace Parking_Manage
         static string Query(string menu, string parkingspot)
         {
             //여기서 DB 내부적으로 정산버튼을 누른 시간 - 주차 시작한시간 에 곱하기 1000을 해서 시간당 천원이 나옴
-            string query = $"update {TABLE} set result1 = (select sum(((to_char(systimestamp,'HH24')+1)-result)*1000) from {TABLE} where parkingspot={parkingspot}) where parkingspot={parkingspot}";
-          
+            //string query = $"update {TABLE} set result1 = " +
+            //    $"(select sum(((to_char(systimestamp,'HH24')+1)-result)*1000) from {TABLE} where parkingspot=" +
+            //    $"{parkingspot}) where parkingspot={parkingspot}";
+            string query = $"{menu} {TABLE} set result1 = " +
+                $" (SELECT ROUND((TO_DATE(sysdate) - TO_DATE(result))*24)*1000 " +
+                $" FROM parkingcar where parkingspot = {parkingspot}) " +
+                $" where parkingspot={parkingspot}";
+
+           
+                       
             return query;
         }
         public static void executeQuery(string menu, string parkingspot, string carnumber=null, string drivername=null, string phonenumber=null)
