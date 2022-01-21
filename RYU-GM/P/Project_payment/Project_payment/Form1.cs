@@ -174,6 +174,81 @@ namespace Project_payment
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           this.WindowState= FormWindowState.Minimized;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Maximized){
+                this.WindowState=FormWindowState.Normal;
+            }
+            else if (this.WindowState == FormWindowState.Normal){
+                this.WindowState = FormWindowState.Maximized;
+            }
+           
+            
+        }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox_parking_spot.Text == "")
+                {
+                    MessageBox.Show("주차 공간 입력 하세요");
+                    return;
+                }
+                if (textBox_carnum.Text == "")
+                {
+                    MessageBox.Show("차번호 입력");
+                    return;
+                }
+                ParkingCar car = DataManager.selectQuery(int.Parse(textBox_parking_spot.Text));
+                if (car.CarNumber != "")
+                {
+                    MessageBox.Show("이미 주차 됨");
+                }
+                else
+                {
+                    DataManager.executeQuery("update", textBox_parking_spot.Text, textBox_carnum.Text,
+                        textBox_driver_name.Text, textBox_phone_num.Text);
+                    DataManager.selectQuery();
+                    refreshScreen();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+                throw;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
     
 }
