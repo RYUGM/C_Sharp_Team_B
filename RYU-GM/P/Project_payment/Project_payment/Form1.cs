@@ -10,23 +10,27 @@ using System.Windows.Forms;
 
 namespace Project_payment
 {
+
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
             DataManager.selectQuery();
+            DataManager.executeQuery_refresh();
             refreshScreen();
         }
         void refreshScreen()
         {
             dataGridView_Parking_Car_View.DataSource = null;
+            
             //dataGridView_Parking_Car_View1.DataSource = null;
             try
             {
                 if (DataManager.cars.Count > 0)
                 {
                     dataGridView_Parking_Car_View.DataSource = DataManager.cars;
+                    
                     //dataGridView_Parking_Car_View1.DataSource = DataManager.cars;
                     textBox_parking_spot.Text = DataManager.cars[0].ParkingSpot.ToString();
                     textBox_spot_manager.Text = textBox_parking_spot.Text;
@@ -103,8 +107,9 @@ namespace Project_payment
                 }
                 else
                 {
-                    DataManager.executeQuery("update", textBox_parking_spot.Text, "", "", "");
+                    DataManager.executeQuery("update", textBox_parking_spot.Text, "", "", "" );
                     DataManager.selectQuery();
+                    DataManager.executeQuery_refresh();
                     refreshScreen();
                   
                 }
@@ -120,12 +125,14 @@ namespace Project_payment
         private void btn_add_Click(object sender, EventArgs e)
         {
             DataManager.executeQuery("insert", textBox_spot_manager.Text);
+            DataManager.executeQuery_refresh();
             refreshScreen();
         }
 
         private void btn_del_Click(object sender, EventArgs e)
         {
             DataManager.executeQuery("delete", textBox_spot_manager.Text);
+            DataManager.executeQuery_refresh();
             refreshScreen();
         }
 
@@ -216,6 +223,7 @@ namespace Project_payment
                     DataManager.executeQuery("update", textBox_parking_spot.Text, textBox_carnum.Text,
                         textBox_driver_name.Text, textBox_phone_num.Text);
                     DataManager.selectQuery();
+                    DataManager.executeQuery_refresh();
                     refreshScreen();
 
                 }
@@ -252,8 +260,80 @@ namespace Project_payment
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                                           
+                    DataManager.executeQuery_refresh();
+
+                    DataManager.selectQuery();
+                    refreshScreen();
+
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+                throw;
+            }
+           
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            DataManager.executeQuery_refresh();
+
+            DataManager.selectQuery();
+            refreshScreen();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            DataManager.executeQuery_refresh();
+
+            DataManager.selectQuery();
+            refreshScreen();
+        }
+
+        private void uiGroupBox1_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void uiButton5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox_parking_spot.Text == "")
+                {
+                    MessageBox.Show("주차 공간 입력 하세요");
+                    return;
+                }
+
+                ParkingCar car = DataManager.selectQuery(int.Parse(textBox_parking_spot.Text));
+                if (car.CarNumber == "")
+                {
+                    MessageBox.Show("아직 차가 없습니다.");
+                }
+                else
+                {
+                    DataManager.executeQuery_charge(textBox_parking_spot.Text);
+                    
+                    DataManager.selectQuery_Form2(int.Parse(textBox_parking_spot.Text));
+                    new Form2().ShowDialog();
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+                throw;
+            }
+        
+    }
     }
     
 }

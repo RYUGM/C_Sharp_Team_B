@@ -63,3 +63,4 @@ C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\o
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.exe
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.pdb
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.csproj.AssemblyReference.cache
+C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.Form2.resources
