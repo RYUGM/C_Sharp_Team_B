@@ -249,6 +249,11 @@ namespace Project_payment
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
