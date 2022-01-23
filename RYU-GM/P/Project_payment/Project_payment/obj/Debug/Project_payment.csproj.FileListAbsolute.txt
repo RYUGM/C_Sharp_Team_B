@@ -56,7 +56,6 @@ C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_paym
 C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\bin\Debug\System.Text.Json.xml
 C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\bin\Debug\System.ValueTuple.xml
-C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.csproj.SuggestedBindingRedirects.cache
 C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.Form1.resources
 C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.Form2.resources
 C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.Form3.resources
