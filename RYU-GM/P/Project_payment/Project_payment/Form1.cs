@@ -13,6 +13,8 @@ namespace Project_payment
 
     public partial class Form1 : Form
     {
+       
+
         public Form1()
         {
             InitializeComponent();
@@ -83,8 +85,7 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+               
                 throw;
             }
         }
@@ -116,8 +117,7 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+              
                 throw;
             }
         }
@@ -161,8 +161,7 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+              
                 throw;
             }
         }
@@ -230,8 +229,7 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+              
                 throw;
             }
         }
@@ -272,8 +270,7 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
+             
                 throw;
             }
            
@@ -294,6 +291,14 @@ namespace Project_payment
             DataManager.selectQuery();
             refreshScreen();
         }
+        private void research(object sender, EventArgs e)
+        {
+
+            DataManager.executeQuery_refresh();
+
+            DataManager.selectQuery();
+            refreshScreen();
+        }
 
         private void uiGroupBox1_Click(object sender, EventArgs e)
         {
@@ -302,6 +307,7 @@ namespace Project_payment
 
         private void uiButton5_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (textBox_parking_spot.Text == "")
@@ -318,22 +324,44 @@ namespace Project_payment
                 else
                 {
                     DataManager.executeQuery_charge(textBox_parking_spot.Text);
-                    
+
                     DataManager.selectQuery_Form2(int.Parse(textBox_parking_spot.Text));
-                    new Form2().ShowDialog();
 
 
+
+                    Form2 form2 = new Form2();
+                    form2.Show();
+                    form2.SetText(textBox_parking_spot.Text);
+                                       
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(ex.StackTrace);
                 throw;
             }
-        
+
+        }
+
+        private void textBox_parking_spot_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_Parking_Car_View_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox_parking_spot.Text= dataGridView_Parking_Car_View.Rows[e.RowIndex].Cells[0].Value.ToString();    
+            textBox_carnum.Text= dataGridView_Parking_Car_View.Rows[e.RowIndex].Cells[1].Value.ToString();    
+            textBox_driver_name.Text= dataGridView_Parking_Car_View.Rows[e.RowIndex].Cells[2].Value.ToString();    
+            textBox_phone_num.Text= dataGridView_Parking_Car_View.Rows[e.RowIndex].Cells[3].Value.ToString();    
+        }
+
+        private void uiButton1_Click_1(object sender, EventArgs e)
+        {
+            Form3 from3= new Form3();
+            from3.ShowDialog();
+        }
     }
-    }
+
     
 }
