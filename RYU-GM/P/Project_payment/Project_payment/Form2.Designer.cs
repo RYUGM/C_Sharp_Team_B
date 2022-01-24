@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.dataGridView_Parking_Car_View = new Sunny.UI.UIDataGridView();
+            this.parkingSpotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.result1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parkingCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiTextBox2 = new Sunny.UI.UITextBox();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -51,13 +55,9 @@
             this.uiRadioButton3 = new Sunny.UI.UIRadioButton();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel3 = new Sunny.UI.UILabel();
-            this.parkingSpotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.result1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parkingCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Parking_Car_View)).BeginInit();
-            this.uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parkingCarBindingSource)).BeginInit();
+            this.uiGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTextBox1
@@ -80,20 +80,20 @@
             // 
             this.dataGridView_Parking_Car_View.AllowUserToAddRows = false;
             this.dataGridView_Parking_Car_View.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
-            this.dataGridView_Parking_Car_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
+            this.dataGridView_Parking_Car_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Parking_Car_View.AutoGenerateColumns = false;
             this.dataGridView_Parking_Car_View.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView_Parking_Car_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_Parking_Car_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Parking_Car_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Parking_Car_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Parking_Car_View.ColumnHeadersHeight = 32;
             this.dataGridView_Parking_Car_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_Parking_Car_View.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -101,14 +101,14 @@
             this.carNumberDataGridViewTextBoxColumn,
             this.result1DataGridViewTextBoxColumn});
             this.dataGridView_Parking_Car_View.DataSource = this.parkingCarBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Parking_Car_View.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Parking_Car_View.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_Parking_Car_View.EnableHeadersVisualStyles = false;
             this.dataGridView_Parking_Car_View.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             this.dataGridView_Parking_Car_View.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(144)))), ((int)(((byte)(151)))));
@@ -116,16 +116,16 @@
             this.dataGridView_Parking_Car_View.Name = "dataGridView_Parking_Car_View";
             this.dataGridView_Parking_Car_View.ReadOnly = true;
             this.dataGridView_Parking_Car_View.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(144)))), ((int)(((byte)(151)))));
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(144)))), ((int)(((byte)(151)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Parking_Car_View.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dataGridView_Parking_Car_View.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(144)))), ((int)(((byte)(151)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Parking_Car_View.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dataGridView_Parking_Car_View.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_Parking_Car_View.RowTemplate.Height = 23;
             this.dataGridView_Parking_Car_View.SelectedIndex = -1;
             this.dataGridView_Parking_Car_View.ShowGridLine = true;
@@ -134,6 +134,32 @@
             this.dataGridView_Parking_Car_View.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
             this.dataGridView_Parking_Car_View.Style = Sunny.UI.UIStyle.Office2010Silver;
             this.dataGridView_Parking_Car_View.TabIndex = 2;
+            this.dataGridView_Parking_Car_View.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Parking_Car_View_CellContentClick);
+            // 
+            // parkingSpotDataGridViewTextBoxColumn
+            // 
+            this.parkingSpotDataGridViewTextBoxColumn.DataPropertyName = "ParkingSpot";
+            this.parkingSpotDataGridViewTextBoxColumn.HeaderText = "주차 번호";
+            this.parkingSpotDataGridViewTextBoxColumn.Name = "parkingSpotDataGridViewTextBoxColumn";
+            this.parkingSpotDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // carNumberDataGridViewTextBoxColumn
+            // 
+            this.carNumberDataGridViewTextBoxColumn.DataPropertyName = "CarNumber";
+            this.carNumberDataGridViewTextBoxColumn.HeaderText = "자동차 번호";
+            this.carNumberDataGridViewTextBoxColumn.Name = "carNumberDataGridViewTextBoxColumn";
+            this.carNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // result1DataGridViewTextBoxColumn
+            // 
+            this.result1DataGridViewTextBoxColumn.DataPropertyName = "result1";
+            this.result1DataGridViewTextBoxColumn.HeaderText = "결제 금액";
+            this.result1DataGridViewTextBoxColumn.Name = "result1DataGridViewTextBoxColumn";
+            this.result1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // parkingCarBindingSource
+            // 
+            this.parkingCarBindingSource.DataSource = typeof(Project_payment.ParkingCar);
             // 
             // uiTextBox2
             // 
@@ -148,6 +174,7 @@
             this.uiTextBox2.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox2.Name = "uiTextBox2";
             this.uiTextBox2.Size = new System.Drawing.Size(148, 35);
+            this.uiTextBox2.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBox2.TabIndex = 3;
             this.uiTextBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -218,6 +245,7 @@
             // 
             // uiLabel1
             // 
+            this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel1.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.uiLabel1.Location = new System.Drawing.Point(39, 2);
             this.uiLabel1.Name = "uiLabel1";
@@ -343,31 +371,6 @@
             this.uiLabel3.Text = "결제금액";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // parkingSpotDataGridViewTextBoxColumn
-            // 
-            this.parkingSpotDataGridViewTextBoxColumn.DataPropertyName = "ParkingSpot";
-            this.parkingSpotDataGridViewTextBoxColumn.HeaderText = "주차 번호";
-            this.parkingSpotDataGridViewTextBoxColumn.Name = "parkingSpotDataGridViewTextBoxColumn";
-            this.parkingSpotDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // carNumberDataGridViewTextBoxColumn
-            // 
-            this.carNumberDataGridViewTextBoxColumn.DataPropertyName = "CarNumber";
-            this.carNumberDataGridViewTextBoxColumn.HeaderText = "자동차 번호";
-            this.carNumberDataGridViewTextBoxColumn.Name = "carNumberDataGridViewTextBoxColumn";
-            this.carNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // result1DataGridViewTextBoxColumn
-            // 
-            this.result1DataGridViewTextBoxColumn.DataPropertyName = "result1";
-            this.result1DataGridViewTextBoxColumn.HeaderText = "결제 금액";
-            this.result1DataGridViewTextBoxColumn.Name = "result1DataGridViewTextBoxColumn";
-            this.result1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // parkingCarBindingSource
-            // 
-            this.parkingCarBindingSource.DataSource = typeof(Project_payment.ParkingCar);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -394,8 +397,8 @@
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Parking_Car_View)).EndInit();
-            this.uiGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.parkingCarBindingSource)).EndInit();
+            this.uiGroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -36,7 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView_Parking_Car_View = new Sunny.UI.UIDataGridView();
-            this.result = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox_parking_spot = new Sunny.UI.UITextBox();
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.textBox_phone_num = new Sunny.UI.UITextBox();
@@ -102,8 +101,7 @@
             this.driverNameDataGridViewTextBoxColumn,
             this.phoneNumberDataGridViewTextBoxColumn,
             this.parkingTimeDataGridViewTextBoxColumn,
-            this.result1DataGridViewTextBoxColumn,
-            this.result});
+            this.result1DataGridViewTextBoxColumn});
             this.dataGridView_Parking_Car_View.DataSource = this.parkingCarBindingSource;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
@@ -133,19 +131,12 @@
             this.dataGridView_Parking_Car_View.RowTemplate.Height = 23;
             this.dataGridView_Parking_Car_View.SelectedIndex = -1;
             this.dataGridView_Parking_Car_View.ShowGridLine = true;
-            this.dataGridView_Parking_Car_View.Size = new System.Drawing.Size(974, 537);
+            this.dataGridView_Parking_Car_View.Size = new System.Drawing.Size(879, 537);
             this.dataGridView_Parking_Car_View.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
             this.dataGridView_Parking_Car_View.Style = Sunny.UI.UIStyle.Office2010Silver;
             this.dataGridView_Parking_Car_View.TabIndex = 1;
             this.dataGridView_Parking_Car_View.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Parking_Car_View_CellClick);
             this.dataGridView_Parking_Car_View.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Parking_Car_View_CellContentClick);
-            // 
-            // result
-            // 
-            this.result.DataPropertyName = "result";
-            this.result.HeaderText = "고객 수준";
-            this.result.Name = "result";
-            this.result.ReadOnly = true;
             // 
             // textBox_parking_spot
             // 
@@ -267,9 +258,7 @@
             // btn_del
             // 
             this.btn_del.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_del.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btn_del.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_del.ForeColor = System.Drawing.Color.Black;
             this.btn_del.Location = new System.Drawing.Point(172, 103);
             this.btn_del.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_del.Name = "btn_del";
@@ -289,16 +278,15 @@
             this.uiLabel8.Size = new System.Drawing.Size(80, 29);
             this.uiLabel8.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel8.TabIndex = 5;
-            this.uiLabel8.Text = "주차번호";
+            this.uiLabel8.Text = "주차 번호";
             this.uiLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel8.Click += new System.EventHandler(this.uiLabel8_Click);
             // 
             // btn_add
             // 
             this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_add.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btn_add.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_add.ForeColor = System.Drawing.Color.Black;
-            this.btn_add.Location = new System.Drawing.Point(27, 103);
+            this.btn_add.Location = new System.Drawing.Point(15, 103);
             this.btn_add.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_add.Name = "btn_add";
             this.btn_add.RectSize = 2;
@@ -339,9 +327,7 @@
             // uiButton5
             // 
             this.uiButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton5.FillColor = System.Drawing.Color.CornflowerBlue;
             this.uiButton5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.uiButton5.ForeColor = System.Drawing.Color.Black;
             this.uiButton5.Location = new System.Drawing.Point(162, 201);
             this.uiButton5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton5.Name = "uiButton5";
@@ -371,9 +357,7 @@
             // 
             this.btn_park_in.BackColor = System.Drawing.Color.Khaki;
             this.btn_park_in.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btn_park_in.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btn_park_in.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_park_in.ForeColor = System.Drawing.Color.Black;
             this.btn_park_in.Location = new System.Drawing.Point(17, 201);
             this.btn_park_in.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_park_in.Name = "btn_park_in";
@@ -438,7 +422,7 @@
             this.uiGroupBox1.FillColor = System.Drawing.Color.Transparent;
             this.uiGroupBox1.FillColor2 = System.Drawing.Color.Transparent;
             this.uiGroupBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.uiGroupBox1.Location = new System.Drawing.Point(1093, 4);
+            this.uiGroupBox1.Location = new System.Drawing.Point(1004, 4);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox1.Name = "uiGroupBox1";
@@ -456,7 +440,7 @@
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton1.FillColor = System.Drawing.Color.Navy;
             this.uiButton1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.uiButton1.Location = new System.Drawing.Point(1243, 608);
+            this.uiButton1.Location = new System.Drawing.Point(1148, 614);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
             this.uiButton1.Size = new System.Drawing.Size(100, 35);
@@ -553,9 +537,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(823, 604);
+            this.button2.Location = new System.Drawing.Point(774, 608);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 44);
+            this.button2.Size = new System.Drawing.Size(52, 45);
             this.button2.TabIndex = 30;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
@@ -620,7 +604,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1371, 651);
+            this.ClientSize = new System.Drawing.Size(1280, 661);
             this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.uiLabel7);
@@ -677,14 +661,13 @@
         private Sunny.UI.UIGroupBox uiGroupBox3;
         private Sunny.UI.UILabel uiLabel6;
         private Sunny.UI.UILabel uiLabel7;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn parkingSpotDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn carNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn driverNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn parkingTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn result1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn result;
-        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -17,6 +17,8 @@ namespace Project_payment
 
 
             InitializeComponent();
+            uiDatePicker1.Value = System.DateTime.Now;
+            uiRadioButton1.Checked=true;
 
 
             DataManager.selectQuery_form3_total(uiDatePicker1.Text);
@@ -47,7 +49,7 @@ namespace Project_payment
         }
         void refreshScreen()
         {
-            uiDataGridView1.DataSource = null;
+            this.uiDataGridView1.DataSource = null;
             uiLabel2.Text = DataManager.his_t[0].total+"원";
 
             //dataGridView_Parking_Car_View1.DataSource = null;
@@ -55,7 +57,7 @@ namespace Project_payment
             {
                 if (DataManager.his.Count > 0)
                 {
-                    uiDataGridView1.DataSource = DataManager.his;
+                    this.uiDataGridView1.DataSource = DataManager.his;
 
                     //dataGridView_Parking_Car_View1.DataSource = DataManager.cars;
                     
@@ -70,8 +72,8 @@ namespace Project_payment
 
         private void uiDatePicker1_ValueChanged(object sender, DateTime value)
         {
+           
             
-
             DataManager.selectQuery_form3_total(uiDatePicker1.Text);
             DataManager.selectQuery_form3(uiDatePicker1.Text);
             
@@ -107,7 +109,12 @@ namespace Project_payment
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
-
+            if (uiTextBox1.Text == "")
+            {
+                MessageBox.Show("메시지를 입력하세요");
+                return;
+            }
+            else
             DataManager.executeQuery_form3(uiDatePicker1.Text,uiTextBox1.Text);
             //DataManager.executeQuery_refresh_form3();
            
@@ -162,6 +169,39 @@ namespace Project_payment
         private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void uiRadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+           
+                uiTextBox3.Text = DateTime.Now.ToString() + uiTextBox2.Text + " 출근";
+          
+
+        }
+
+        private void uiRadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+           
+                uiTextBox3.Text = DateTime.Now.ToString() + uiTextBox2.Text + " 퇴근";
+                
+           
+        }
+
+        private void uiButton2_Click(object sender, EventArgs e)
+        {
+            if (uiTextBox3.Text == "")
+            {
+                MessageBox.Show("이름 입력");
+                return;
+            }
+          
+            
+            else
+            DataManager.executeQuery_form3(uiDatePicker1.Text, uiTextBox3.Text);
+           
+
+            DataManager.selectQuery_form3(uiDatePicker1.Text);
+            refreshScreen();
         }
     }
 }

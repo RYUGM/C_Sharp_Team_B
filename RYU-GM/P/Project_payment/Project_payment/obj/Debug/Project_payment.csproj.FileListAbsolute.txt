@@ -66,3 +66,4 @@ C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_paym
 C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.pdb
 C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.csproj.AssemblyReference.cache
 C:\Users\KB\Desktop\kb\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.Form3.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.csproj.SuggestedBindingRedirects.cache

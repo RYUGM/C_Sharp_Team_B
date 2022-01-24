@@ -361,6 +361,11 @@ namespace Project_payment
             Form3 from3= new Form3();
             from3.ShowDialog();
         }
+
+        private void uiLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     

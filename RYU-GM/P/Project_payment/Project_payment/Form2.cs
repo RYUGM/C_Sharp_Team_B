@@ -16,6 +16,7 @@ namespace Project_payment
         public Form2()
         {
             InitializeComponent();
+            uiDatePicker1.Value = System.DateTime.Now;  
            
                      
 
@@ -30,14 +31,14 @@ namespace Project_payment
         }
         void refreshScreen()
         {
-            dataGridView_Parking_Car_View.DataSource = null;
+            this.dataGridView_Parking_Car_View.DataSource = null;
 
             //dataGridView_Parking_Car_View1.DataSource = null;
             try
             {
                 if (DataManager.cars.Count > 0)
                 {
-                    dataGridView_Parking_Car_View.DataSource = DataManager.cars;
+                    this.dataGridView_Parking_Car_View.DataSource = DataManager.cars;
 
                     //뭔데 씨발 진짜 
                    
@@ -202,6 +203,7 @@ namespace Project_payment
                 {
                     MessageBox.Show("아직 차가 없습니다.");
                 }
+               
                 else
                 {
 
@@ -275,6 +277,11 @@ namespace Project_payment
         private void uiRadioButton3_CheckedChanged(object sender, EventArgs e)
         {
             uiTextBox2.Text = "영수증고객";
+        }
+
+        private void dataGridView_Parking_Car_View_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
