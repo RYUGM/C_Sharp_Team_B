@@ -22,7 +22,6 @@ C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\b
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\bin\Debug\System.Text.Json.xml
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\bin\Debug\System.ValueTuple.xml
-C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.csproj.SuggestedBindingRedirects.cache
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.Form1.resources
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.Properties.Resources.resources
 C:\Users\KB\Desktop\KB\C_Sharp_Team_B\RYU-GM\P\Project_payment\Project_payment\obj\Debug\Project_payment.csproj.GenerateResource.cache
