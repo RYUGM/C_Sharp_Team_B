@@ -39,9 +39,10 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
+                throw;
 
-                throw new Exception("DB연결 애러" + ex.Message +
-                    "애러 위치" + Environment.NewLine + ex.StackTrace);
+                //throw new Exception("DB연결 애러" + ex.Message +
+                //    "애러 위치" + Environment.NewLine + ex.StackTrace);
             }
         }
 
@@ -342,8 +343,9 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                OraConn.Close();
-                throw new Exception(ex.Message + "~~" + Environment.NewLine + ex.StackTrace);
+                throw;
+                //OraConn.Close();
+                //throw new Exception(ex.Message + "~~" + Environment.NewLine + ex.StackTrace);
                 //query
             }
 
@@ -371,7 +373,8 @@ namespace Project_payment
             catch (Exception ex)
             {
                 OraConn.Close();
-                throw new Exception(ex.Message + "~~" + Environment.NewLine + ex.StackTrace);
+                throw;
+               //throw new Exception(ex.Message + "~~" + Environment.NewLine + ex.StackTrace);
                 //query
             }
 
