@@ -14,14 +14,14 @@ namespace Project_payment
         //       "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))" +
         //       "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
         //       "User Id=c##scott;Password=tiger;";
-        const string ORADB = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" +
-              "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))" +
-              "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
-              "User Id=c##RYU;Password=newruh;";
         //const string ORADB = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" +
-        //     "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1522)))" +
-        //     "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
-        //     "User Id=c##ryu;Password=newruh;";
+        //      "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))" +
+        //      "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
+        //      "User Id=c##RYU;Password=newruh;";
+        const string ORADB = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" +
+             "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1522)))" +
+             "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
+             "User Id=c##ryu;Password=newruh;";
         public static OracleConnection OraConn = new OracleConnection(ORADB);
 
         public static List<ParkingCar> cars = new List<ParkingCar>();
@@ -39,10 +39,10 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                throw;
-
-                //throw new Exception("DB연결 애러" + ex.Message +
-                //    "애러 위치" + Environment.NewLine + ex.StackTrace);
+                OraConn.Close();
+                
+                throw new Exception(" ConnectDB() DB연결 애러" + ex.Message +
+                    "애러 위치" + Environment.NewLine + ex.StackTrace);
             }
         }
 
@@ -81,7 +81,7 @@ namespace Project_payment
         {
             ConnectDB();
             string sql;
-            sql = $"select post from parkingcar_history WHERE wdate='{wdate}' AND not post is null";
+            sql = $"select post from parkingcar_history WHERE wdate='{wdate}' AND not post is null ORDER BY wdate";
             OracleDataAdapter oda = new OracleDataAdapter();
             oda.SelectCommand = new OracleCommand();
             oda.SelectCommand.Connection = OraConn;
@@ -133,11 +133,15 @@ namespace Project_payment
 
 
 
-        public static void selectQuery_Form2(int parkingspot)
+        public static ParkingCar selectQuery_Form2(int parkingspot)
         {
             ConnectDB();
+
             string sql;
-            sql = $"select * from {TABLE} where PARKINGSPOT={parkingspot}";
+            ParkingCar car = new ParkingCar();
+            try
+            {
+                sql = $"select * from {TABLE} where PARKINGSPOT={parkingspot}";
             OracleDataAdapter oda = new OracleDataAdapter();
             oda.SelectCommand = new OracleCommand();
             oda.SelectCommand.Connection = OraConn;
@@ -146,53 +150,62 @@ namespace Project_payment
             DataSet ds = new DataSet();
             oda.Fill(ds, TABLE);
 
-            cars.Clear();
-            foreach (DataRow item in ds.Tables[0].Rows)
+            //cars.Clear();
+            //foreach (DataRow item in ds.Tables[0].Rows)
             {
-                ParkingCar car = new ParkingCar();
-
+                DataRow item = ds.Tables[0].Rows[0];
                 car.ParkingSpot = int.Parse(item["parkingspot"].ToString());
                 car.CarNumber = item["carnumber"].ToString();
-                                        
                 car.result1 = item["result1"].ToString() + "원";
 
-                cars.Add(car);
+                    // cars.Add(car);
+                }
+            }
+            catch (Exception ex)
+            {
+                OraConn.Close();
+                System.Windows.Forms.MessageBox.Show("selectQuery_Form2" + ex.Message + "___" + ex.StackTrace);
             }
             OraConn.Close();
+            return car;
         }
 
 
         public static ParkingCar selectQuery(int spot)
         {
             ConnectDB();
-            string sql;
-            sql = "select * from " + TABLE + " where parkingspot=" + spot + " order by to_number(parkingspot)";
-            OracleDataAdapter oda = new OracleDataAdapter();
-            oda.SelectCommand = new OracleCommand();
-            oda.SelectCommand.Connection = OraConn;
-            oda.SelectCommand.CommandText = sql;
-
-            DataSet ds = new DataSet();
-            oda.Fill(ds, TABLE);
-
-           
-            DataRow item = ds.Tables[0].Rows[0];
             ParkingCar car = new ParkingCar();
-            car.ParkingSpot = int.Parse(item["parkingspot"].ToString());
-            car.CarNumber = item["Carnumber"].ToString();
-            car.DriverName = item["Drivername"].ToString();
-            car.PhoneNumber = item["Phonenumber"].ToString();
-            car.ParkingTime = item["Parkingtime"].ToString() ==
-                "" ? new DateTime() : DateTime.Parse(item["parkingtime"].ToString());
+            try
+            {
+                string sql;
+                sql = "select * from " + TABLE + " where parkingspot=" + spot + " order by to_number(parkingspot)";
+                OracleDataAdapter oda = new OracleDataAdapter();
+                oda.SelectCommand = new OracleCommand();
+                oda.SelectCommand.Connection = OraConn;
+                oda.SelectCommand.CommandText = sql;
 
-            car.result1 = item["result1"].ToString()+"원";
+                DataSet ds = new DataSet();
+                oda.Fill(ds, TABLE);
 
-           
+
+                DataRow item = ds.Tables[0].Rows[0];
+                car.ParkingSpot = int.Parse(item["parkingspot"].ToString());
+                car.CarNumber = item["Carnumber"].ToString();
+                car.DriverName = item["Drivername"].ToString();
+                car.PhoneNumber = item["Phonenumber"].ToString();
+                car.ParkingTime = item["Parkingtime"].ToString() ==
+                    "" ? new DateTime() : DateTime.Parse(item["parkingtime"].ToString());
+
+                car.result1 = item["result1"].ToString() + "원";
+            }
+            catch (Exception ex)
+            {
+                OraConn.Close();
+                System.Windows.Forms.MessageBox.Show("selectQuery(int spot)"+ex.Message+"+"+ex.StackTrace);
+            }
+
             OraConn.Close();
-
-          
             return car;
-            
         }
 
         static string Query(string menu, string parkingspot, string carnumber, string drivername, string phonenumber)
@@ -265,7 +278,8 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                throw;
+                OraConn.Close();
+                throw new Exception("executeQuery(string menu, string parkingspot, string carnumber = null, string drivername = null, string phonenumber = null)" + ex.Message+"_"+ex.StackTrace);
             }
 
             OraConn.Close();
@@ -289,7 +303,8 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                throw;
+            OraConn.Close();
+                throw new Exception("executeQuery_form3"+ex.Message+"__"+ex.StackTrace);
             }
 
             OraConn.Close();
@@ -312,7 +327,8 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                throw;
+            OraConn.Close();
+                throw new Exception("executeQuery_form3_total" + ex.Message + "__" + ex.StackTrace);
             }
 
             OraConn.Close();
@@ -342,9 +358,9 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-                throw;
-                //OraConn.Close();
-                //throw new Exception(ex.Message + "~~" + Environment.NewLine + ex.StackTrace);
+                OraConn.Close();
+                //throw;
+               throw new Exception("executeQuery_charge" + ex.Message + "~~" + Environment.NewLine + ex.StackTrace);
                 //query
             }
 
@@ -372,8 +388,8 @@ namespace Project_payment
             catch (Exception ex)
             {
                 OraConn.Close();
-                throw;
-               //throw new Exception(ex.Message + "~~" + Environment.NewLine + ex.StackTrace);
+                //throw;
+                throw new Exception(ex.Message + "~~" + Environment.NewLine + ex.StackTrace);
                 //query
             }
 
@@ -403,13 +419,13 @@ namespace Project_payment
             catch (Exception ex)
             {
               
-                throw;
-               
+            OraConn.Close();
+
+                throw new Exception("executeQuery_refresh1"+ex.Message + "__" + ex.StackTrace);
+
             }
 
             OraConn.Close();
-
-            selectQuery_Form2(pot);
         }
     }
 

@@ -13,179 +13,53 @@ namespace Project_payment
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        ParkingCar parkingCar = new ParkingCar();
+
+        public Form2(ParkingCar car)
         {
             InitializeComponent();
-            uiDatePicker1.Value = System.DateTime.Now;  
-           
-                     
+            parkingCar = car;
+            uiDatePicker1.Value = System.DateTime.Now;
+            result_for_charge.Add(parkingCar);
+            uiTextBox1.Text = (car.ParkingSpot.ToString());
 
-        }
-        public void SetText(string data)
-        {
-           
-            uiTextBox1.Text = data;
-            button1_Click(null,null);
-            
-            
-        }
-        void refreshScreen()
-        {
-            this.dataGridView_Parking_Car_View.DataSource = null;
-
-            //dataGridView_Parking_Car_View1.DataSource = null;
-            try
-            {
-                if (DataManager.cars.Count > 0)
-                {
-                    this.dataGridView_Parking_Car_View.DataSource = DataManager.cars;
-
-                    //뭔데 씨발 진짜 
-                   
-
-
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (uiTextBox1.Text == "")
-                {
-                    MessageBox.Show("주차 공간 입력 하세요");
-                    return;
-                }
-
-                ParkingCar car = DataManager.selectQuery(int.Parse(uiTextBox1.Text));
-                if (car.CarNumber == "")
-                {
-                    MessageBox.Show("아직 차가 없습니다.");
-                }
-                else
-                {
-                   
-
-                    DataManager.executeQuery_refresh1(int.Parse(uiTextBox1.Text));
-                                        
-                    refreshScreen();
-                   
-
-                }
-            }
-            catch (Exception ex)
-            {
-               
-                throw;
-            }
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DataManager.executeQuery_refresh();
-            DataManager.selectQuery();
-
-
+            int spot = int.Parse(uiTextBox1.Text);
+            DataManager.executeQuery_refresh1(spot);
+            parkingCar = DataManager.selectQuery(spot);
 
             refreshScreen();
-                                
-            Close();
-            
-           
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            uiTextBox2.Text = "현금/카드 결제";
-        }
-
-        private void radioButton1_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        void refreshScreen()
         {
-            uiTextBox2.Text = "VIP";
-        }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            uiTextBox2.Text = "영수증고객";
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
+            dataGridView_Parking_Car_View.DataSource = null;
             try
             {
-                if (uiTextBox1.Text == "")
-                {
-                    MessageBox.Show("주차 공간 입력 하세요");
-                    return;
-                }
-                if(uiTextBox2.Text == "")
-                {
-                    MessageBox.Show("결제 방법 선택");
-                    return;
-                }
+                // this.dataGridView_Parking_Car_View.DataSource = DataManager.cars;
 
-                ParkingCar car = DataManager.selectQuery(int.Parse(uiTextBox1.Text));
-                if (car.CarNumber == "")
-                {
-                    MessageBox.Show("아직 차가 없습니다.");
-                }
-                else
-                {
-                    string result = DataManager.cars[0].result1;
-                    string tempsrt = Regex.Replace(result, @"\D", "");
-                    DataManager.executeQuery_form3_total(uiDatePicker1.Text, tempsrt);
-
-
-
-                    DataManager.executeQuery("update", uiTextBox1.Text, "", "", "");
-                   
-                    DataManager.executeQuery_refresh1(int.Parse(uiTextBox1.Text));
-                    refreshScreen();
-
-                }
+                //뭔데 씨발 진짜 
+                result_for_charge[0] = parkingCar;
+                dataGridView_Parking_Car_View.DataSource = result_for_charge;
+                //dataGridView_Parking_Car_View.Refresh();
             }
             catch (Exception ex)
             {
-                throw;
-            }
-        
-    }
 
-        private void uiTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
+                throw new Exception(ex.Message+"_"+ex.StackTrace);
+            }
         }
+
+      
+
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
             DataManager.executeQuery_refresh();
-            DataManager.selectQuery();
-                                  
-
-            refreshScreen();
+            //DataManager.selectQuery();
+            //refreshScreen();
             Close();    
-        }
-
-        private void uiGroupBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void uiButton1_Click(object sender, EventArgs e)
@@ -210,6 +84,7 @@ namespace Project_payment
 
                     DataManager.executeQuery_refresh1(int.Parse(uiTextBox1.Text));
 
+                    parkingCar = DataManager.selectQuery(int.Parse(uiTextBox1.Text));
                     refreshScreen();
 
 
@@ -254,6 +129,8 @@ namespace Project_payment
                     DataManager.executeQuery("update", uiTextBox1.Text, "", "", "");
 
                     DataManager.executeQuery_refresh1(int.Parse(uiTextBox1.Text));
+
+                    parkingCar = DataManager.selectQuery(int.Parse(uiTextBox1.Text));
                     refreshScreen();
 
                 }
@@ -282,6 +159,18 @@ namespace Project_payment
         private void dataGridView_Parking_Car_View_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView_Parking_Car_View_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                Console.WriteLine("...");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message+"..."+ex.StackTrace);
+            }
         }
     }
 }

@@ -37,10 +37,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.dataGridView_Parking_Car_View = new Sunny.UI.UIDataGridView();
-            this.parkingSpotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.result1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parkingCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiTextBox2 = new Sunny.UI.UITextBox();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -55,9 +51,13 @@
             this.uiRadioButton3 = new Sunny.UI.UIRadioButton();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel3 = new Sunny.UI.UILabel();
+            this.parkingSpotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.result1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.result_for_charge = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Parking_Car_View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parkingCarBindingSource)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.result_for_charge)).BeginInit();
             this.SuspendLayout();
             // 
             // uiTextBox1
@@ -74,7 +74,6 @@
             this.uiTextBox1.Size = new System.Drawing.Size(148, 35);
             this.uiTextBox1.TabIndex = 0;
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox1.TextChanged += new System.EventHandler(this.uiTextBox1_TextChanged);
             // 
             // dataGridView_Parking_Car_View
             // 
@@ -83,7 +82,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
             this.dataGridView_Parking_Car_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Parking_Car_View.AutoGenerateColumns = false;
-            this.dataGridView_Parking_Car_View.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridView_Parking_Car_View.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView_Parking_Car_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_Parking_Car_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -100,7 +99,7 @@
             this.parkingSpotDataGridViewTextBoxColumn,
             this.carNumberDataGridViewTextBoxColumn,
             this.result1DataGridViewTextBoxColumn});
-            this.dataGridView_Parking_Car_View.DataSource = this.parkingCarBindingSource;
+            this.dataGridView_Parking_Car_View.DataSource = this.result_for_charge;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
@@ -130,36 +129,12 @@
             this.dataGridView_Parking_Car_View.SelectedIndex = -1;
             this.dataGridView_Parking_Car_View.ShowGridLine = true;
             this.dataGridView_Parking_Car_View.ShowRect = false;
-            this.dataGridView_Parking_Car_View.Size = new System.Drawing.Size(344, 85);
+            this.dataGridView_Parking_Car_View.Size = new System.Drawing.Size(344, 57);
             this.dataGridView_Parking_Car_View.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
             this.dataGridView_Parking_Car_View.Style = Sunny.UI.UIStyle.Office2010Silver;
             this.dataGridView_Parking_Car_View.TabIndex = 2;
             this.dataGridView_Parking_Car_View.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Parking_Car_View_CellContentClick);
-            // 
-            // parkingSpotDataGridViewTextBoxColumn
-            // 
-            this.parkingSpotDataGridViewTextBoxColumn.DataPropertyName = "ParkingSpot";
-            this.parkingSpotDataGridViewTextBoxColumn.HeaderText = "주차 번호";
-            this.parkingSpotDataGridViewTextBoxColumn.Name = "parkingSpotDataGridViewTextBoxColumn";
-            this.parkingSpotDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // carNumberDataGridViewTextBoxColumn
-            // 
-            this.carNumberDataGridViewTextBoxColumn.DataPropertyName = "CarNumber";
-            this.carNumberDataGridViewTextBoxColumn.HeaderText = "자동차 번호";
-            this.carNumberDataGridViewTextBoxColumn.Name = "carNumberDataGridViewTextBoxColumn";
-            this.carNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // result1DataGridViewTextBoxColumn
-            // 
-            this.result1DataGridViewTextBoxColumn.DataPropertyName = "result1";
-            this.result1DataGridViewTextBoxColumn.HeaderText = "결제 금액";
-            this.result1DataGridViewTextBoxColumn.Name = "result1DataGridViewTextBoxColumn";
-            this.result1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // parkingCarBindingSource
-            // 
-            this.parkingCarBindingSource.DataSource = typeof(Project_payment.ParkingCar);
+            this.dataGridView_Parking_Car_View.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_Parking_Car_View_DataError);
             // 
             // uiTextBox2
             // 
@@ -198,7 +173,6 @@
             this.uiGroupBox1.TabIndex = 19;
             this.uiGroupBox1.Text = null;
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiGroupBox1.Click += new System.EventHandler(this.uiGroupBox1_Click);
             // 
             // button7
             // 
@@ -371,6 +345,31 @@
             this.uiLabel3.Text = "결제금액";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // parkingSpotDataGridViewTextBoxColumn
+            // 
+            this.parkingSpotDataGridViewTextBoxColumn.DataPropertyName = "ParkingSpot";
+            this.parkingSpotDataGridViewTextBoxColumn.HeaderText = "주차 번호";
+            this.parkingSpotDataGridViewTextBoxColumn.Name = "parkingSpotDataGridViewTextBoxColumn";
+            this.parkingSpotDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // carNumberDataGridViewTextBoxColumn
+            // 
+            this.carNumberDataGridViewTextBoxColumn.DataPropertyName = "CarNumber";
+            this.carNumberDataGridViewTextBoxColumn.HeaderText = "차량 번호";
+            this.carNumberDataGridViewTextBoxColumn.Name = "carNumberDataGridViewTextBoxColumn";
+            this.carNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // result1DataGridViewTextBoxColumn
+            // 
+            this.result1DataGridViewTextBoxColumn.DataPropertyName = "result1";
+            this.result1DataGridViewTextBoxColumn.HeaderText = "결제 금액";
+            this.result1DataGridViewTextBoxColumn.Name = "result1DataGridViewTextBoxColumn";
+            this.result1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // result_for_charge
+            // 
+            this.result_for_charge.DataSource = typeof(Project_payment.ParkingCar);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -395,10 +394,9 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Parking_Car_View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parkingCarBindingSource)).EndInit();
             this.uiGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.result_for_charge)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -407,10 +405,6 @@
 
         private Sunny.UI.UITextBox uiTextBox1;
         private Sunny.UI.UIDataGridView dataGridView_Parking_Car_View;
-        private System.Windows.Forms.BindingSource parkingCarBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn parkingSpotDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn result1DataGridViewTextBoxColumn;
         private Sunny.UI.UITextBox uiTextBox2;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private System.Windows.Forms.Button button7;
@@ -425,5 +419,9 @@
         private Sunny.UI.UIRadioButton uiRadioButton3;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel3;
+        private System.Windows.Forms.BindingSource result_for_charge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn parkingSpotDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn result1DataGridViewTextBoxColumn;
     }
 }

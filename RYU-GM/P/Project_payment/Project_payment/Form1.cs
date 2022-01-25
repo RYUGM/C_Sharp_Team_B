@@ -22,6 +22,15 @@ namespace Project_payment
             DataManager.executeQuery_refresh();
             refreshScreen();
         }
+        
+
+        void refreshDataSource()
+        {
+
+            dataGridView_Parking_Car_View.DataSource = null;
+            if (DataManager.cars.Count > 0)
+                dataGridView_Parking_Car_View.DataSource = DataManager.cars;
+        }
         void refreshScreen()
         {
             dataGridView_Parking_Car_View.DataSource = null;
@@ -43,10 +52,11 @@ namespace Project_payment
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message + "_" + ex.StackTrace);
 
-                throw;
+               // throw;
             }
         }
 
@@ -85,8 +95,9 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-               
-                throw;
+
+                Console.WriteLine(ex.Message + "_" + ex.StackTrace);
+              //  throw;
             }
         }
 
@@ -117,8 +128,9 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-              
-                throw;
+
+                Console.WriteLine(ex.Message + "_" + ex.StackTrace);
+                //throw;
             }
         }
 
@@ -161,8 +173,9 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-              
-                throw;
+
+                Console.WriteLine(ex.Message + "_" + ex.StackTrace);
+              //  throw;
             }
         }
 
@@ -229,8 +242,9 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-              
-                throw;
+
+                Console.WriteLine(ex.Message + "_" + ex.StackTrace);
+               // throw;
             }
         }
 
@@ -270,10 +284,11 @@ namespace Project_payment
             }
             catch (Exception ex)
             {
-             
-                throw;
+                Console.WriteLine(ex.Message + "_" + ex.StackTrace);
+
+                // throw;
             }
-           
+
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -325,20 +340,23 @@ namespace Project_payment
                 {
                     DataManager.executeQuery_charge(textBox_parking_spot.Text);
 
-                    DataManager.selectQuery_Form2(int.Parse(textBox_parking_spot.Text));
+                    ParkingCar selectCar = DataManager.selectQuery_Form2(int.Parse(textBox_parking_spot.Text));
 
 
 
-                    Form2 form2 = new Form2();
-                    form2.Show();
-                    form2.SetText(textBox_parking_spot.Text);
-                                       
+                    Form2 form2 = new Form2(selectCar);
+                    //form2.SetText(textBox_parking_spot.Text);
+                    form2.ShowDialog();
+                    //refreshScreen();
+                    refreshDataSource();
+
 
                 }
             }
             catch (Exception ex)
             {
-                throw;
+                Console.WriteLine(ex.Message + "_" + ex.StackTrace);
+                //throw new Exception(ex.Message+"_"+ex.StackTrace);
             }
 
         }
@@ -365,6 +383,31 @@ namespace Project_payment
         private void uiLabel8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView_Parking_Car_View_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("에러\n  인식:" + e.RowIndex + Environment.NewLine + "컬럼인덱스:" +
+                                                e.ColumnIndex + Environment.NewLine + "컨텍스트:" +
+                                                e.Context + Environment.NewLine + "익셉션:" +
+                                                e.Exception + Environment.NewLine + "ThrowException:" +
+                                                e.ThrowException);
+
+                Console.WriteLine("------------------\n에러\n  e.RowIndex:" + e.RowIndex + Environment.NewLine + "e.컬럼인덱스:" +
+                                                e.ColumnIndex + Environment.NewLine + "e.컨텍스트:" +
+                                                e.Context + Environment.NewLine + "e.익셉션:" +
+                                                e.Exception + Environment.NewLine + "e.ThrowException:" +
+                                                e.ThrowException + Environment.NewLine + "-------------------------");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("___" + ex.Message + "_@@@___" + ex.StackTrace);
+                throw new Exception("___" + ex.Message + "____" + ex.StackTrace);
+
+            }
         }
     }
 

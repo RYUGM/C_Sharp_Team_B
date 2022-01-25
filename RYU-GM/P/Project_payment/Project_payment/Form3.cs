@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sunny.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Project_payment
 {
     public partial class Form3 : Form
     {
+
+        bool isGoToWork = true;
         public Form3()
         {
 
@@ -114,7 +117,7 @@ namespace Project_payment
                 MessageBox.Show("메시지를 입력하세요");
                 return;
             }
-            else
+
             DataManager.executeQuery_form3(uiDatePicker1.Text,uiTextBox1.Text);
             //DataManager.executeQuery_refresh_form3();
            
@@ -171,35 +174,29 @@ namespace Project_payment
 
         }
 
-        private void uiRadioButton1_CheckedChanged(object sender, EventArgs e)
+        private void uicheckd(object sender, EventArgs e)
         {
-           
-                uiTextBox3.Text = DateTime.Now.ToString() + uiTextBox2.Text + " 출근";
-          
 
-        }
-
-        private void uiRadioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-           
-                uiTextBox3.Text = DateTime.Now.ToString() + uiTextBox2.Text + " 퇴근";
-                
-           
+            if ((sender as UIRadioButton).Text == "출근")
+                isGoToWork = true;
+            else
+                isGoToWork = false;
         }
 
         private void uiButton2_Click(object sender, EventArgs e)
         {
-            if (uiTextBox3.Text == "")
+            if (uiTextBox2.Text == "")
             {
                 MessageBox.Show("이름 입력");
                 return;
             }
-          
-            
-            else
-            DataManager.executeQuery_form3(uiDatePicker1.Text, uiTextBox3.Text);
-           
 
+            if (isGoToWork)
+                uiTextBox3.Text = DateTime.Now.ToString() + uiTextBox2.Text + " 출근";
+            else
+                uiTextBox3.Text = DateTime.Now.ToString() + uiTextBox2.Text + " 퇴근";
+
+            DataManager.executeQuery_form3(uiDatePicker1.Text, uiTextBox3.Text);
             DataManager.selectQuery_form3(uiDatePicker1.Text);
             refreshScreen();
         }
