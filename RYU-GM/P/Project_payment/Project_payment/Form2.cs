@@ -120,8 +120,11 @@ namespace Project_payment
                 }
                 else
                 {
+                    
+                    
                     string result = DataManager.cars[0].result1;
                     string tempsrt = Regex.Replace(result, @"\D", "");
+
                     DataManager.executeQuery_form3_total(uiDatePicker1.Text, tempsrt);
 
 
