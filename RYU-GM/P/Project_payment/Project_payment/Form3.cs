@@ -200,5 +200,10 @@ namespace Project_payment
             DataManager.selectQuery_form3(uiDatePicker1.Text);
             refreshScreen();
         }
+
+        private void uiGroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

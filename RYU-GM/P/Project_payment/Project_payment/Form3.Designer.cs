@@ -51,9 +51,9 @@
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.postDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.historyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.historyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.postDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.uiLabel1.Location = new System.Drawing.Point(32, 51);
+            this.uiLabel1.Location = new System.Drawing.Point(177, 9);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(171, 23);
             this.uiLabel1.TabIndex = 0;
@@ -77,7 +77,7 @@
             // 
             this.uiLabel2.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.uiLabel2.Location = new System.Drawing.Point(267, 51);
+            this.uiLabel2.Location = new System.Drawing.Point(399, 9);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(105, 23);
             this.uiLabel2.TabIndex = 1;
@@ -117,7 +117,7 @@
             this.uiDataGridView1.EnableHeadersVisualStyles = false;
             this.uiDataGridView1.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(144)))), ((int)(((byte)(151)))));
-            this.uiDataGridView1.Location = new System.Drawing.Point(27, 88);
+            this.uiDataGridView1.Location = new System.Drawing.Point(27, 68);
             this.uiDataGridView1.Name = "uiDataGridView1";
             this.uiDataGridView1.ReadOnly = true;
             this.uiDataGridView1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(144)))), ((int)(((byte)(151)))));
@@ -134,7 +134,7 @@
             this.uiDataGridView1.RowTemplate.Height = 23;
             this.uiDataGridView1.SelectedIndex = -1;
             this.uiDataGridView1.ShowGridLine = true;
-            this.uiDataGridView1.Size = new System.Drawing.Size(375, 251);
+            this.uiDataGridView1.Size = new System.Drawing.Size(375, 271);
             this.uiDataGridView1.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(228)))), ((int)(((byte)(233)))));
             this.uiDataGridView1.Style = Sunny.UI.UIStyle.Office2010Silver;
             this.uiDataGridView1.TabIndex = 2;
@@ -182,7 +182,7 @@
             this.uiDatePicker1.MinimumSize = new System.Drawing.Size(63, 0);
             this.uiDatePicker1.Name = "uiDatePicker1";
             this.uiDatePicker1.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.uiDatePicker1.Size = new System.Drawing.Size(375, 41);
+            this.uiDatePicker1.Size = new System.Drawing.Size(130, 41);
             this.uiDatePicker1.SymbolDropDown = 61555;
             this.uiDatePicker1.SymbolNormal = 61555;
             this.uiDatePicker1.TabIndex = 6;
@@ -202,7 +202,7 @@
             this.uiButton1.Size = new System.Drawing.Size(100, 35);
             this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
             this.uiButton1.TabIndex = 7;
-            this.uiButton1.Text = "메시지 등록";
+            this.uiButton1.Text = "입력";
             this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // uiRadioButton1
@@ -214,6 +214,7 @@
             this.uiRadioButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRadioButton1.Name = "uiRadioButton1";
             this.uiRadioButton1.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.uiRadioButton1.RadioButtonColor = System.Drawing.Color.MediumSeaGreen;
             this.uiRadioButton1.Size = new System.Drawing.Size(79, 29);
             this.uiRadioButton1.Style = Sunny.UI.UIStyle.Custom;
             this.uiRadioButton1.TabIndex = 8;
@@ -229,6 +230,7 @@
             this.uiRadioButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRadioButton2.Name = "uiRadioButton2";
             this.uiRadioButton2.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.uiRadioButton2.RadioButtonColor = System.Drawing.Color.Crimson;
             this.uiRadioButton2.Size = new System.Drawing.Size(79, 29);
             this.uiRadioButton2.Style = Sunny.UI.UIStyle.Custom;
             this.uiRadioButton2.TabIndex = 9;
@@ -241,13 +243,13 @@
             this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBox2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.uiTextBox2.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.uiTextBox2.Location = new System.Drawing.Point(130, 37);
+            this.uiTextBox2.Location = new System.Drawing.Point(141, 37);
             this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox2.Maximum = 2147483647D;
             this.uiTextBox2.Minimum = -2147483648D;
             this.uiTextBox2.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox2.Name = "uiTextBox2";
-            this.uiTextBox2.Size = new System.Drawing.Size(215, 31);
+            this.uiTextBox2.Size = new System.Drawing.Size(204, 31);
             this.uiTextBox2.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBox2.TabIndex = 4;
             this.uiTextBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -258,7 +260,7 @@
             this.uiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBox3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.uiTextBox3.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.uiTextBox3.Location = new System.Drawing.Point(13, 455);
+            this.uiTextBox3.Location = new System.Drawing.Point(10, 290);
             this.uiTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox3.Maximum = 2147483647D;
             this.uiTextBox3.Minimum = -2147483648D;
@@ -286,7 +288,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(27, 521);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(372, 2);
             this.label1.TabIndex = 11;
@@ -297,6 +299,7 @@
             this.uiGroupBox2.BackColor = System.Drawing.Color.Transparent;
             this.uiGroupBox2.Controls.Add(this.uiLabel4);
             this.uiGroupBox2.Controls.Add(this.uiTextBox2);
+            this.uiGroupBox2.Controls.Add(this.label1);
             this.uiGroupBox2.Controls.Add(this.uiRadioButton1);
             this.uiGroupBox2.Controls.Add(this.uiButton2);
             this.uiGroupBox2.Controls.Add(this.uiRadioButton2);
@@ -305,14 +308,14 @@
             this.uiGroupBox2.FillDisableColor = System.Drawing.Color.Transparent;
             this.uiGroupBox2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox2.ForeColor = System.Drawing.Color.Transparent;
-            this.uiGroupBox2.Location = new System.Drawing.Point(27, 528);
+            this.uiGroupBox2.Location = new System.Drawing.Point(425, 198);
             this.uiGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox2.Name = "uiGroupBox2";
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox2.RectColor = System.Drawing.Color.Black;
             this.uiGroupBox2.RectSize = 2;
-            this.uiGroupBox2.Size = new System.Drawing.Size(375, 156);
+            this.uiGroupBox2.Size = new System.Drawing.Size(375, 141);
             this.uiGroupBox2.Style = Sunny.UI.UIStyle.Custom;
             this.uiGroupBox2.TabIndex = 24;
             this.uiGroupBox2.Text = "출근/퇴근 관리";
@@ -322,7 +325,7 @@
             // 
             this.uiLabel4.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.uiLabel4.Location = new System.Drawing.Point(40, 39);
+            this.uiLabel4.Location = new System.Drawing.Point(53, 39);
             this.uiLabel4.Name = "uiLabel4";
             this.uiLabel4.Size = new System.Drawing.Size(70, 29);
             this.uiLabel4.Style = Sunny.UI.UIStyle.Custom;
@@ -341,26 +344,19 @@
             this.uiGroupBox1.FillDisableColor = System.Drawing.Color.Transparent;
             this.uiGroupBox1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox1.ForeColor = System.Drawing.Color.Transparent;
-            this.uiGroupBox1.Location = new System.Drawing.Point(27, 347);
+            this.uiGroupBox1.Location = new System.Drawing.Point(425, 51);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox1.RectColor = System.Drawing.Color.Black;
             this.uiGroupBox1.RectSize = 2;
-            this.uiGroupBox1.Size = new System.Drawing.Size(375, 144);
+            this.uiGroupBox1.Size = new System.Drawing.Size(375, 135);
             this.uiGroupBox1.Style = Sunny.UI.UIStyle.Custom;
             this.uiGroupBox1.TabIndex = 25;
             this.uiGroupBox1.Text = "전달사항 입력";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // historyBindingSource
-            // 
-            this.historyBindingSource.DataSource = typeof(Project_payment.history);
-            // 
-            // historyBindingSource1
-            // 
-            this.historyBindingSource1.DataSource = typeof(Project_payment.history);
+            this.uiGroupBox1.Click += new System.EventHandler(this.uiGroupBox1_Click);
             // 
             // postDataGridViewTextBoxColumn
             // 
@@ -370,16 +366,23 @@
             this.postDataGridViewTextBoxColumn.ReadOnly = true;
             this.postDataGridViewTextBoxColumn.Width = 330;
             // 
+            // historyBindingSource
+            // 
+            this.historyBindingSource.DataSource = typeof(Project_payment.history);
+            // 
+            // historyBindingSource1
+            // 
+            this.historyBindingSource1.DataSource = typeof(Project_payment.history);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(429, 713);
+            this.ClientSize = new System.Drawing.Size(825, 373);
             this.Controls.Add(this.uiGroupBox1);
             this.Controls.Add(this.uiGroupBox2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.uiTextBox3);
             this.Controls.Add(this.uiDatePicker1);
             this.Controls.Add(this.uiDataGridView1);

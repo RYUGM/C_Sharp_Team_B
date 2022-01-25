@@ -438,15 +438,17 @@
             // uiButton1
             // 
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.FillColor = System.Drawing.Color.Navy;
+            this.uiButton1.FillColor = System.Drawing.Color.Gold;
             this.uiButton1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.uiButton1.Location = new System.Drawing.Point(1148, 614);
+            this.uiButton1.ForeColor = System.Drawing.Color.Black;
+            this.uiButton1.Location = new System.Drawing.Point(1125, 614);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(100, 35);
+            this.uiButton1.Size = new System.Drawing.Size(123, 35);
             this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
             this.uiButton1.TabIndex = 19;
-            this.uiButton1.Text = "기록 조회";
+            this.uiButton1.Text = "출/퇴근 관리";
+            this.uiButton1.TipsFont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click_1);
             // 
             // uiGroupBox2
@@ -537,7 +539,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(774, 608);
+            this.button2.Location = new System.Drawing.Point(780, 608);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(52, 45);
             this.button2.TabIndex = 30;
