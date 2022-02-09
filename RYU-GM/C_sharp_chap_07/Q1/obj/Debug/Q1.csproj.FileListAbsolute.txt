@@ -1,0 +1,11 @@
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\bin\Debug\Q1.exe.config
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\bin\Debug\Q1.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\bin\Debug\Q1.pdb
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\obj\Debug\Q1.csproj.AssemblyReference.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\obj\Debug\Q1.csproj.SuggestedBindingRedirects.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\obj\Debug\Q1.Form1.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\obj\Debug\Q1.Properties.Resources.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\obj\Debug\Q1.csproj.GenerateResource.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\obj\Debug\Q1.csproj.CoreCompileInputs.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\obj\Debug\Q1.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\C_sharp_chap_07\Q1\obj\Debug\Q1.pdb

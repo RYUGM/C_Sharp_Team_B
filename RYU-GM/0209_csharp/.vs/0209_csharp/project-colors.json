@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "464bd3e4-4be0-4a3f-ae94-91963efe9ad3": {
+      "ProjectGuid": "464bd3e4-4be0-4a3f-ae94-91963efe9ad3",
+      "DisplayName": "0209_csharp",
+      "ColorIndex": 0
+    },
+    "75065619-540a-4814-9ca9-6a9caf0f79e9": {
+      "ProjectGuid": "75065619-540a-4814-9ca9-6a9caf0f79e9",
+      "DisplayName": "My_Csharp_08",
+      "ColorIndex": 1
+    },
+    "a41a81a5-bfad-4e1a-86e4-f7a33c08f00b": {
+      "ProjectGuid": "a41a81a5-bfad-4e1a-86e4-f7a33c08f00b",
+      "DisplayName": "Answer_02",
+      "ColorIndex": 2
+    },
+    "e84afbdf-1519-414c-86cc-c7c44ad63c9c": {
+      "ProjectGuid": "e84afbdf-1519-414c-86cc-c7c44ad63c9c",
+      "DisplayName": "Csharp_08_01",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

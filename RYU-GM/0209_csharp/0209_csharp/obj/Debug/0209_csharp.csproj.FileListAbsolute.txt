@@ -1,0 +1,11 @@
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\bin\Debug\0209_csharp.exe.config
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\bin\Debug\0209_csharp.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\bin\Debug\0209_csharp.pdb
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\obj\Debug\0209_csharp.csproj.AssemblyReference.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\obj\Debug\0209_csharp.csproj.SuggestedBindingRedirects.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\obj\Debug\_0209_csharp.Form1.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\obj\Debug\_0209_csharp.Properties.Resources.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\obj\Debug\0209_csharp.csproj.GenerateResource.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\obj\Debug\0209_csharp.csproj.CoreCompileInputs.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\obj\Debug\0209_csharp.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0209_csharp\0209_csharp\obj\Debug\0209_csharp.pdb
