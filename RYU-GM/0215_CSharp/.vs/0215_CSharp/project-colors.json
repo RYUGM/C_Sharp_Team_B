@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0a2937b9-d090-4361-9095-2e22af2aa976": {
+      "ProjectGuid": "0a2937b9-d090-4361-9095-2e22af2aa976",
+      "DisplayName": "0215_CSharp",
+      "ColorIndex": 0
+    },
+    "21bcdd9a-78fc-4d49-bdb7-ac4e34ba9f46": {
+      "ProjectGuid": "21bcdd9a-78fc-4d49-bdb7-ac4e34ba9f46",
+      "DisplayName": "chap09_02",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

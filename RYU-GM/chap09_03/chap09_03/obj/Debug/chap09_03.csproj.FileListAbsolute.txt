@@ -1,0 +1,11 @@
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\bin\Debug\chap09_03.exe.config
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\bin\Debug\chap09_03.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\bin\Debug\chap09_03.pdb
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\obj\Debug\chap09_03.csproj.AssemblyReference.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\obj\Debug\chap09_03.csproj.SuggestedBindingRedirects.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\obj\Debug\chap09_03.Form1.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\obj\Debug\chap09_03.Properties.Resources.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\obj\Debug\chap09_03.csproj.GenerateResource.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\obj\Debug\chap09_03.csproj.CoreCompileInputs.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\obj\Debug\chap09_03.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\chap09_03\chap09_03\obj\Debug\chap09_03.pdb
