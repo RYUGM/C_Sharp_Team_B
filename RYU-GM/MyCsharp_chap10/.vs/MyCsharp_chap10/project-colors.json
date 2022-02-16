@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8781710a-0c97-43a3-b84f-43c46d7b7705": {
+      "ProjectGuid": "8781710a-0c97-43a3-b84f-43c46d7b7705",
+      "DisplayName": "MyCsharp_chap10",
+      "ColorIndex": 0
+    },
+    "40444e4a-079d-4d74-a965-b50019f7388a": {
+      "ProjectGuid": "40444e4a-079d-4d74-a965-b50019f7388a",
+      "DisplayName": "chap_10_datagridview",
+      "ColorIndex": 1
+    },
+    "932a0c28-585e-4e67-a9d1-8a17b0e23cc6": {
+      "ProjectGuid": "932a0c28-585e-4e67-a9d1-8a17b0e23cc6",
+      "DisplayName": "MyCsharp_chap11",
+      "ColorIndex": 2
+    },
+    "5f1bb348-396b-4f19-baa5-7e3153fef325": {
+      "ProjectGuid": "5f1bb348-396b-4f19-baa5-7e3153fef325",
+      "DisplayName": "MyCsharp_chap12",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

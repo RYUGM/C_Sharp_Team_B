@@ -1,0 +1,15 @@
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\bin\Debug\chap_10_datagridview.exe.config
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\bin\Debug\chap_10_datagridview.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\bin\Debug\chap_10_datagridview.pdb
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\bin\Debug\MyCsharp_chap10.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\bin\Debug\MyCsharp_chap10.pdb
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\bin\Debug\MyCsharp_chap10.exe.config
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.csproj.AssemblyReference.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.csproj.SuggestedBindingRedirects.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.Form1.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.Properties.Resources.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.csproj.GenerateResource.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.csproj.CoreCompileInputs.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.csproj.CopyComplete
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\MyCsharp_chap10\chap_10_datagridview\obj\Debug\chap_10_datagridview.pdb
