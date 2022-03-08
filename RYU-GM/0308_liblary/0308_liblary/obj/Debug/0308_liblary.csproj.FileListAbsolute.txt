@@ -1,0 +1,13 @@
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\bin\Debug\0308_liblary.exe.config
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\bin\Debug\0308_liblary.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\bin\Debug\0308_liblary.pdb
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\0308_liblary.csproj.AssemblyReference.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\0308_liblary.csproj.SuggestedBindingRedirects.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\_0308_liblary.MainForm.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\_0308_liblary.Properties.Resources.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\0308_liblary.csproj.GenerateResource.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\0308_liblary.csproj.CoreCompileInputs.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\0308_liblary.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\0308_liblary.pdb
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\_0308_liblary.BookManager.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\0308_liblary\0308_liblary\obj\Debug\_0308_liblary.UserManager.resources
