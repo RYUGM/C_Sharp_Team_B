@@ -1,0 +1,11 @@
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\bin\Debug\myCar.exe.config
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\bin\Debug\myCar.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\bin\Debug\myCar.pdb
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\obj\Debug\myCar.csproj.AssemblyReference.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\obj\Debug\myCar.csproj.SuggestedBindingRedirects.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\obj\Debug\myCar.MainForm.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\obj\Debug\myCar.Properties.Resources.resources
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\obj\Debug\myCar.csproj.GenerateResource.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\obj\Debug\myCar.csproj.CoreCompileInputs.cache
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\obj\Debug\myCar.exe
+C:\Users\RYU\Desktop\경북\C_Sharp_Team_B\RYU-GM\myManager\myCar\myCar\obj\Debug\myCar.pdb
