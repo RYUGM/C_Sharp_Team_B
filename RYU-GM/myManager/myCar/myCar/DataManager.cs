@@ -57,6 +57,47 @@ namespace myCar
                 PrintLog(ex.StackTrace);
             }
         }
+
+        internal static bool Save(string query, int parkingSpot, out string contents)
+        {
+            DBHelper.selectQuery(parkingSpot);
+            contents = "";
+            if (query == "insert")
+                return DBInsert(parkingSpot, ref contents);
+            else
+                return DBdelete(parkingSpot, ref contents);
+        }
+
+        private static bool DBdelete(int parkingSpot, ref string contents)
+        {
+            if(DBHelper.dt.Rows.Count != 0)
+            {
+                DBHelper.deleteQuery(parkingSpot);
+                contents = $"주차공간 {parkingSpot}이 삭제 되었습니다.";
+                return true;
+            }
+            else
+            {
+                contents = $"{parkingSpot} 이 존재하지 않음";
+                return false;
+            }
+        }
+
+        private static bool DBInsert(int parkingSpot, ref string contents)
+        {
+            if (DBHelper.dt.Rows.Count == 0)
+            {
+                DBHelper.insertQuery(parkingSpot);
+                contents = $"주차공간 {parkingSpot}이 추가 되었습니다.";
+                return true;
+            }
+            else
+            {
+                contents = $"{parkingSpot} 이 이미 존재합니다.";
+                return false;
+            }
+        }
+
         public static void PrintLog(string contents)
         {
             DirectoryInfo di = new DirectoryInfo("ParkingHistory");

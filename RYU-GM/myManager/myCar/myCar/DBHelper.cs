@@ -11,13 +11,13 @@ namespace myCar
     public class DBHelper
     {
         private static SqlConnection conn = new SqlConnection();
-        public static SqlDataAdapter da;
+        public static SqlDataAdapter da = new SqlDataAdapter();
         public static DataSet ds;
         public static DataTable dt;
 
         private static void ConnectDB()
         {
-            conn.ConnectionString = string.Format("Data Source = ({0})); " +
+            conn.ConnectionString = string.Format("Data Source = ({0}); " +
                 "initial Catalog={1};"+
                 "integrated Security={2};"+
                 "Timeout=3",
@@ -30,18 +30,14 @@ namespace myCar
         {
             ConnectDB();
             SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
 
             try
             {
-                if(parkingSpot < 0)
-                {
-                    cmd.CommandText = "select * from CarManager";
-                }
+                if (parkingSpot < 0) //parkingSpot이 -1인 경우
+                    cmd.CommandText = "Select * from CarManager"; //CarManager= 테이블명
                 else
-                {
                     cmd.CommandText = "select * from CarManager where ParkingSpot = " + parkingSpot;
-
-                }
                 da = new SqlDataAdapter(cmd);
                 ds = new DataSet();
                 da.Fill(ds,"CarManager");
